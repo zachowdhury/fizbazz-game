@@ -1,0 +1,27 @@
+{
+  "name": "chai-mocha-simple",
+  "version": "1.0.0",
+  "description": "simple basic example of chai with mocha",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachowdhury/chai-mocha-simple.git"
+  },
+  "keywords": [
+    "mocha",
+    "chai"
+  ],
+  "author": "Zahid Chowdhury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zachowdhury/chai-mocha-simple/issues"
+  },
+  "homepage": "https://github.com/zachowdhury/chai-mocha-simple#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
