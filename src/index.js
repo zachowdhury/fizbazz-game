@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from "react-dom";
-import TableBody from './components/movieListComp';
+import React, {Component} from '../../../.cache/typescript/2.9/node_modules/@types/react';
+import ReactDOM from "../../../.cache/typescript/2.9/node_modules/@types/react-dom";
+import MovieList from './components/MovieList';
 
-const Index = () => {
+const Index = () => {   
     return <div>
-        <TableBody />
+        <MovieList />
     <p>Test Article Genereted for me </p>
     </div>;
 };
