@@ -1,6 +1,6 @@
-import React,{Componenet} from 'react';
+import React,{Component} from 'react';
 
-export default class TitleList extends Componenet{
+export default class TitleList extends Component{
     render (){
         return <h1>TitleList class</h1>;
     }

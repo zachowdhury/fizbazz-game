@@ -4,11 +4,11 @@ import Home from './containers/Home';
 
 const Index = () => {   
     return(
-    <div>
-        <p>World of Tables </p>  
-        <Home />
-    </div>
-    );
+        <div>
+            <p>World of Tables </p>  
+            <Home text = " WELCOME "/>
+        </div>
+        );
 };
 
 ReactDOM.render (<Index />, 
