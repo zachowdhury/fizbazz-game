@@ -15,8 +15,8 @@ export default class MovieList extends Component{
     render(){
         return(
             <div>
-                <p>Dam didi dum</p>
-                    <p>{this.myAlert}</p> 
+                <p>MovieList</p>
+                  
             </div>
         );
     }

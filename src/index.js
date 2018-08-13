@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import ReactDOM from "react-dom";
-import MovieList from './components/MovieList';
+import Home from './containers/Home';
 
 const Index = () => {   
-    return( <div>
-        <p>World of Tables </p>
-        <MovieList />
-    </div>);
+    return(
+    <div>
+        <p>World of Tables </p>  
+        <Home />
+    </div>
+    );
 };
 
 ReactDOM.render (<Index />, 
