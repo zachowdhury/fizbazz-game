@@ -14,16 +14,21 @@ export default class MovieList extends Component{
 
     render(){
         return(
-            <div className="row">
-            <p>Dam didi dum</p>
-             <p>{this.myAlert}</p> 
+            <div>
+                <p>Dam didi dum</p>
+                    <p>{this.myAlert}</p> 
             </div>
         );
     }
-
+    
     myAlert(){
-        console.log ( 'krama krama kramas') ;
+        return 
+        <div> 
+            dataset.forEach(element => {
+                <li>element</li>
+            })
+        </div>;
     }
 }
-
+(MovieList);
 
