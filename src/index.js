@@ -1,10 +1,11 @@
-import React, {Component} from '../../../.cache/typescript/2.9/node_modules/@types/react';
-import ReactDOM from "../../../.cache/typescript/2.9/node_modules/@types/react-dom";
+import React, {Component} from 'react';
+import ReactDOM from "react-dom";
 import MovieList from './components/MovieList';
 
 const Index = () => {   
     return <div>
-        <MovieList />
+    
+    <MovieList />
     <p>Test Article Genereted for me </p>
     </div>;
 };
