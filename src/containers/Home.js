@@ -24,7 +24,7 @@ export default class Home extends Component {
         );
     }
     greetText (){
-          console.log ('yahoo');
+          console.log ('yahoo okkkk');
           return <p>all is done yahoo.</p>;
     }    
 } 
