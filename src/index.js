@@ -5,8 +5,7 @@ import Home from './containers/Home';
 const Index = () => {   
     return(
         <div>
-            <p>World of Tables </p>  
-            <Home text = " WELCOME "/>
+            <Home text = " WELCOME to homepage"/>
         </div>
         );
 };

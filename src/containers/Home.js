@@ -8,25 +8,29 @@ export default class Home extends Component {
     constructor(props){
         super ( props);
         this.greetText = this.greetText.bind( this);
+        this.login= true;
     
     }
  componentDidMount(){
-     this.greetText();
+    //  this.greetText();
  }
     
     render(){
         return ( 
             <div>
                 <TitleList />
-                {this.greetText}
-                <p>this is Home, {this.props.text}</p>
+                {this.greetText()}
+                <p>{this.props.text}</p>
                 {/* <Login /> */}
                 <MovieList />
             </div>
         );
     }
     greetText (){
-          console.log ('yahoo okkkk');
-          return <p>all is done yahoo.</p>;
+        if (  true ){
+            return <p>you are loged in as USer.</p>;
+        }else{
+            return <p> you are logged in as Guest</p>;
+        }
     }    
 } 
