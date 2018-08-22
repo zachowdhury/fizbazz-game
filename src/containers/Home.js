@@ -1,6 +1,7 @@
 import React,{Component } from 'react';
 import MovieList from '../components/MovieList';
 import TitleList from '../components/TitleList';
+import Login from '../components/Login';
 
 
 export default class Home extends Component {
@@ -19,6 +20,7 @@ export default class Home extends Component {
                 <TitleList />
                 {this.greetText}
                 <p>this is Home, {this.props.text}</p>
+                {/* <Login /> */}
                 <MovieList />
             </div>
         );

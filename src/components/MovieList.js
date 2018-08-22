@@ -8,18 +8,19 @@ export default class MovieList extends Component{
     }
     
     render(){
-        var movieData = JSON.stringify ( dataset);
+        var {title , year} = JSON.stringify ( dataset);
         return(
             <div>
                 <p>MovieList</p>
-             <p>message is : { this.printList(dataset) }</p>
+             <p>message is : { this.email }</p>
             </div>
         );
     }
     printList ( data ){
+        
         return(
-            data.forEach(e => {
-                console.log (e);
+            data.forEach((e) => {
+                return e;
             })
         );
     }
