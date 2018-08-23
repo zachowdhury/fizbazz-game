@@ -2,27 +2,34 @@ import React,{Component } from 'react';
 const dataset = require('../../data/movies.json');
 
 export default class MovieList extends Component{
-
-
-    componentDidMount(){
-    }
-    
+ 
     render(){
-        var _data =  dataset;
+        const ourVal = "This is link to movie database";
+const database = this.dataset;
         return(
             <div>
-                <p>MovieList</p>
-                {this.printList(_data)}
+                <h2>Tabble of Movies </h2>
+              <table >
+                <th>Title</th><th>Year</th><th>Director</th>
+                {this.printMovieList(dataset)}
+              </table>
             </div>
         );
     }
-    printList ( data ){        
+ 
+    printMovieList ( data ){        
         
-            data.forEach((e) => {
-                // console.log (e.title);
-              return   <p>Title : { e.title }</p>;
-            })
-        
+      const myX = data.map((e,i,arr) => {
+            
+      return (
+      <tr>
+              <td>{e.title} </td>
+              <td>{e.year} </td>
+              <td>{e.director} </td>
+              </tr>
+              );
+            });
+      return myX;
     }
 }
 
