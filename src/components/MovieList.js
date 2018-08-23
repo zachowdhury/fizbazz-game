@@ -1,4 +1,8 @@
 import React,{Component } from 'react';
+import { Table } from 'react-bootstrap';
+
+
+
 const dataset = require('../../data/movies.json');
 
 export default class MovieList extends Component{
@@ -9,10 +13,10 @@ const database = this.dataset;
         return(
             <div>
                 <h2>Tabble of Movies </h2>
-              <table >
+              <Table stripped bordered condensed hover >
                 <th>Title</th><th>Year</th><th>Director</th>
                 {this.printMovieList(dataset)}
-              </table>
+              </Table>
             </div>
         );
     }

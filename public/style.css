@@ -27,3 +27,27 @@
 .main {
     margin-top: 500px; /* Add a top margin to avoid content overlay */
 }
+/*Table and table content in list*/
+/* table {
+    width:100%;
+    font-size: 1em;
+
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 1px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+} */
