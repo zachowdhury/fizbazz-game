@@ -12,40 +12,49 @@ from 'react-bootstrap';
 
 export default class Login extends  Component{
 
-
+    // constructor(props, context) {
+    //     super(props, context);
+    
+    //     this.handleChange = this.handleChange.bind(this);
+    
+    //     this.state = {
+    //       value: ''
+    //     };
+    //   }
+    
+    //   getValidationState() {
+    //     const length = this.state.value.length;
+    //     if (length > 10) return 'success';
+    //     else if (length > 5) return 'warning';
+    //     else if (length > 0) return 'error';
+    //     return null;
+    //   }
+    
+    //   handleChange(e) {
+    //     this.setState({ value: e.target.value });
+    //   }
+    
     render(){
         return(
             <div>
-               <div className="Login">
-                    <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="email" bsSize="large">
-                        <ControlLabel>Email</ControlLabel>
+                    <form>
+                        <FormGroup
+                        controlId="loginEmail"
+                        //validationState={this.getValidationState()}
+                        >
+                        <ControlLabel>Existing User login</ControlLabel>
                         <FormControl
-                        autoFocus
-                        type="email"
-                        value={this.state.email}
-                        onChange={this.handleChange}
+                            type="text"
+                            // value={this.state.value}
+                            placeholder="Enter text"
+                            // onChange={this.handleChange}
                         />
-                    </FormGroup>
-                    <FormGroup controlId="password" bsSize="large">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                        type="password"
-                        />
-                    </FormGroup>
-                    <Button
-                        block
-                        bsSize="large"
-                        disabled={!this.validateForm()}
-                        type="submit"
-                    >
-                        Login
-                    </Button>
+                        <FormControl.Feedback />
+                       {/* // <HelpBlock>Validation is based on string length.</HelpBlock> */}
+                        </FormGroup>
+                        <Button> Login Here</Button>
                     </form>
                 </div>
-            </div>
         );
     }
 
