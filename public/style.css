@@ -28,7 +28,7 @@
     margin-top: 500px; /* Add a top margin to avoid content overlay */
 }
 /*Table and table content in list*/
-/* table {
+table {
     width:100%;
     font-size: 1em;
 
@@ -50,4 +50,28 @@ table#t01 tr:nth-child(odd) {
 table#t01 th {
     background-color: black;
     color: white;
-} */
+} 
+/*Menue listing */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}

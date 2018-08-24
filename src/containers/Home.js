@@ -2,7 +2,7 @@ import React,{Component } from 'react';
 import MovieList from '../components/MovieList';
 import TitleList from '../components/TitleList';
 import Login from '../components/Login';
-
+import Movie from '../containers/Movie'
 
 export default class Home extends Component {
     constructor(props){
@@ -21,7 +21,7 @@ export default class Home extends Component {
                 <TitleList />
                 {this.greetText()}
                 <p>{this.props.text}</p>
-                {/* <Login /> */}
+                <Movie /> 
                 <MovieList />
             </div>
         );
