@@ -4,6 +4,17 @@ import Authenticate from '../middleware/Authenticate';
 
 export default class Analysis extends Component {
 
+    constructor (){
+        super()
+        this.state ={
+            title:'',
+        }
+    }
+
+    componentDidMount(){
+        console.log ( 'componentDidMount---:',this.state);
+    }
+ 
     change(value){
         
         return (
@@ -14,9 +25,12 @@ export default class Analysis extends Component {
     } 
     
     render (){
+        
+
         return (
             <div>
             <h2>This is Analysis </h2>
+            {console.log ( 'Reder in state---:',this.store.getState())}
             {this.change('zahid@gmail.com')}
             </div>
         );    
