@@ -30,7 +30,7 @@ export default class Analysis extends Component {
         return (
             <div>
             <h2>This is Analysis </h2>
-            {console.log ( 'Reder in state---:',this.store.getState())}
+            {console.log ( 'Reder in state---:')}
             {this.change('zahid@gmail.com')}
             </div>
         );    
