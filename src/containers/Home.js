@@ -47,8 +47,10 @@ export default class Home extends Component {
     // }
     
     fetchFlueData(e){
+        // const URL = 'http://localhost:3030/project-drivers-list/60';
+        const URL= 'https://jsonplaceholder.typicode.com/users';
         e.preventDefault();
-        axios.get ('http://localhost:3030/project-drivers-list/60')
+        axios.get (URL)
         .then( response=> this.setState ({    
                 users : {
                     data : response.data,
