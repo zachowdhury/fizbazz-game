@@ -6,12 +6,12 @@ import Routing from './routes/Routing'
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import {createStore} from 'redux';
+import {createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers'
+import logger from 'redux-logger'
 
-
-const store = createStore( rootReducer);
+const store = createStore( rootReducer, applyMiddleware(logger));
 // this  function Index = App module 
 const Index = () => {   
     return(
