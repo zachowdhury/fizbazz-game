@@ -31,8 +31,12 @@ export default class Analysis extends Component {
         return (
             <div>
             <h2>This is Analysis </h2>
+<<<<<<< HEAD
             <Login/>
             {console.log ( 'Reder in state---:',this.store)}
+=======
+            {console.log ( 'Reder in state---:')}
+>>>>>>> 22603ca402d692346cd7f826a9f3bd34a329d88b
             {this.change('zahid@gmail.com')}
             </div>
         );    
