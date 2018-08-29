@@ -4,16 +4,18 @@ const UPDATE_TITLE = 'chai/analysis/UPDATE_TITLE';
 
 
 const initialState ={
-    title :""
-};
+ count :1,
+ title: 'for your eyes only'
+}; 
 
-function updateTitle(state= initialState, action){
+function updateMovies(state= initialState, action){
     switch ( action.type){
 
         case 'UPDATE_TITLE':
         
         const newState = Object.assign ( {}, state,{
-            title:aciton.title
+            count:count+1,
+            title: action.title
         });
         return newState.title;
         

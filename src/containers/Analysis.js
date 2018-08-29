@@ -1,6 +1,7 @@
 import React, {Component, PropertyTypes } from 'react';
 import MovieList from '../components/MovieList';
 import Authenticate from '../middleware/Authenticate';
+import Login from '../components/Login';
 
 export default class Analysis extends Component {
 
@@ -30,7 +31,8 @@ export default class Analysis extends Component {
         return (
             <div>
             <h2>This is Analysis </h2>
-            {console.log ( 'Reder in state---:',this.store.getState())}
+            <Login/>
+            {console.log ( 'Reder in state---:',this.store)}
             {this.change('zahid@gmail.com')}
             </div>
         );    

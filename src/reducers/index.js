@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import Analysis from './Analysis'
 
 
-export default combineReducers({
-  Analysis,
-  
-})
+  const  rootReducer = combineReducers({
+    data: Analysis
+  })
+export default rootReducer;
