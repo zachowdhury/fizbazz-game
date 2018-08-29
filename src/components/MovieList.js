@@ -28,7 +28,7 @@ const database = this.dataset;
     printMovieList ( data ){        
         // this could be anotehr component data passed to by properties 
         // user here redux as we are moving towards update, and patch
-      const myX = data.map((e,i,arr) => {
+      const movieTable = data.map((e,i,arr) => {
             
       return (
               <tr>
@@ -39,7 +39,7 @@ const database = this.dataset;
          
               );
             });
-      return myX;
+      return movieTable;
     }
 }
 

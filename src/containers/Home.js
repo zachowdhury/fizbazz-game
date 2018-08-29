@@ -12,7 +12,7 @@ export default class Home extends Component {
 
         this.fetchFlueData = this.fetchFlueData.bind(this);
         this.greetText = this.greetText.bind( this);
-        
+        this.clearRead =  this.clearRead.bind(this);
         this.login= false;
         this.state = {users:[]};
     
@@ -30,22 +30,40 @@ export default class Home extends Component {
             <div>
                 {this.greetText()}
                 <p>{this.props.text}</p>
-                <button onClick ={this.fetchFlueData}> Fetch Flue data </button>
+                        <button className='button' 
+                        onClick ={this.fetchFlueData}> Fetch Flue data >> 
+                        </button>
                 <Login/>
+                {console.log ( this.state)}
+                {/* <p>{this.clearRead(this.state.users)}</p> */}
             </div>
         );
     }
 
-    mapStateToProps(state){
-        return{
-            title: state.title
-        };
-    }
+    // mapStateToProps(state){
+    //     return{
+    //         title: state.title
+    //     };
+    // }
+    
     fetchFlueData(e){
         e.preventDefault();
         axios.get ('http://localhost:3030/project-drivers-list/60')
-        .then( response=> console.log (response));
+        .then( response=> this.setState ({    
+                users : {
+                    data : response.data,
+                    status: response.status,
+                    text: response.statusText
+                    } 
+            }));
     }
+    clearRead(obj){
+        obj.map ((e,i)=>{
+
+        });
+
+    }
+
     greetText (){
         return(
             this.login 
@@ -56,9 +74,8 @@ export default class Home extends Component {
         
 } 
 
-connect((state)=>{
-data:state.name
-},
-(dispatch)=>{
+connect((state)=>{ users: state.users.data }, 
+    (dispatch)=>{
 
-})(Home);
+        dispatch()
+        })(Home);

@@ -10,6 +10,7 @@ export default class Analysis extends Component {
         this.state ={
             title:'',
         }
+        this.clickMovieData = this.clickMovieData.bind (this);
     }
 
     componentDidMount(){
@@ -24,13 +25,21 @@ export default class Analysis extends Component {
         : <p>moive list needs Authenticate</p>
         );
     } 
-    
+    clickMovieData(e){
+        alert ( 'This is clicked'+this.state);
+    }
     render (){
         
 
         return (
             <div>
-            <h2>This is Analysis </h2>
+                <button 
+                className= "button" 
+                onClick={this.clickMovieData}> 
+                Fetch moviedata
+                </button>
+  
+            <h2>Analysis for movie data </h2>
             <Login/>
             {console.log ( 'Reder in state---:',this.store)}
             {this.change('zahid@gmail.com')}

@@ -1,8 +1,9 @@
-import { combineReducers } from 'redux'
-import Analysis from './Analysis'
-
+import { combineReducers } from 'redux';
+import analysis from './analysis';
+import users from './user';
 
   const  rootReducer = combineReducers({
-    data: Analysis
+    analysis,
+    users
   })
 export default rootReducer;
