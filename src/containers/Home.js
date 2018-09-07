@@ -1,8 +1,5 @@
 import React,{Component } from 'react';
-import MovieList from '../components/MovieList';
-import TitleList from '../components/Header';
 import Login from '../components/Login';
-import {bindActionCreators} from 'redux';
 import { connect }from 'react-redux';
 import axios from 'axios';
 
@@ -19,7 +16,7 @@ export default class Home extends Component {
     }
     componentDidMount(){
 
-        console.log ('Home Page,state:',this.state);
+        console.log ('HomePage props on didMoount',this.props);
     }
     
     render(){
@@ -34,7 +31,8 @@ export default class Home extends Component {
                         onClick ={this.fetchFlueData}> Fetch Flue data >> 
                         </button>
                 <Login/>
-                {console.log ( this.state)}
+                {console.log ('Render Home Props body ', this.props.users,
+                'DATA',this.state)}
                 {/* <p>{this.clearRead(this.state.users)}</p> */}
             </div>
         );
@@ -42,6 +40,7 @@ export default class Home extends Component {
 
     // mapStateToProps(state){
     //     return{
+        
     //         title: state.title
     //     };
     // }
@@ -75,9 +74,18 @@ export default class Home extends Component {
         }
         
 } 
+function mapStateToProps(state) {
+return {
+    users:state.users.data
+};
+}
 
-connect((state)=>{ users: state.users.data }, 
-    (dispatch)=>{
 
-        dispatch()
-        })(Home);
+
+function mapActionToDispatch(dispatch){
+    return{
+
+    };
+}
+connect(mapStateToProps, 
+    null)(Home);

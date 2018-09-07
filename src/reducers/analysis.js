@@ -30,3 +30,4 @@ function updateMovies(state= initialState, action){
     }
 
 }
+export default updateMovies;

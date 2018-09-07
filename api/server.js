@@ -1,5 +1,5 @@
 import express from 'express';
-import  fizbuzzLogic  from './modules/Fizbuz';
+import  fizbuzzLogic,{ multiply }  from './modules/Logic';
 
 const env = {
     HOST : '192.168.68.101',

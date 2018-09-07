@@ -29,7 +29,7 @@ export default function fizbuzzLogic(numbers){
 }
 // @@
 export function multiply(x,y){
-    return x*y;
+    return {result: x*y};
 }
 // @@
 export function fizbuzIntro(){
