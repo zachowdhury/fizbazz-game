@@ -15,8 +15,8 @@ render(){
     return (
                 <Switch>
                     <Route exact path='/' component={Home} />
-                    <Route path = '/movie' component={Movie} />
-                    <Route path = '/analysis' component= {Analaysis} />
+                    {/* <Route path = '/movie' component={Movie} /> */}
+                    {/* <Route path = '/analysis' component= {Analaysis} /> */}
                     <Route path = '/about' component= {About} />
 
                     <Redirect from='*' to ='/' />

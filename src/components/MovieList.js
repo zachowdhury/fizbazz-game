@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 
 
 
-const dataset = require('../../data/movies.json');
+// const dataset = require('../../data/movies.json');
 
 export default class MovieList extends Component{
  

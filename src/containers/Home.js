@@ -27,13 +27,7 @@ export default class Home extends Component {
             <div>
                 {this.greetText()}
                 <p>{this.props.text}</p>
-                        <button className='button' 
-                        onClick ={this.fetchFlueData}> Fetch Flue data >> 
-                        </button>
-                <Login/>
-                {console.log ('Render Home Props body ', this.props.users,
-                'DATA',this.state)}
-                {/* <p>{this.clearRead(this.state.users)}</p> */}
+                <Login />
             </div>
         );
     }

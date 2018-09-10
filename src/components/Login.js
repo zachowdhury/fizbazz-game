@@ -42,7 +42,7 @@ export default class Login extends  Component{
                         controlId="loginEmail"
                         //validationState={this.getValidationState()}
                         >
-                        <ControlLabel>Existing User login</ControlLabel>
+                        <ControlLabel>Enter number / numbers to play the game</ControlLabel>
                         <FormControl
                             type="text"
                             // value={this.state.value}
@@ -52,8 +52,7 @@ export default class Login extends  Component{
                         <FormControl.Feedback />
                        {/* // <HelpBlock>Validation is based on string length.</HelpBlock> */}
                         </FormGroup>
-                        <Button> Login Here</Button>
-                        <button onClick={this.handleClick}>clicke console</button>
+                        <button onClick={this.handleClick}>Play game</button>
                     </form>
                 </div>
         );
