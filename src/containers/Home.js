@@ -16,7 +16,6 @@ export default class Home extends Component {
     }
     componentDidMount(){
 
-        console.log ('HomePage props on didMoount',this.props);
     }
     
     render(){
@@ -24,10 +23,15 @@ export default class Home extends Component {
         if (this.state.isLoading) return <p>....Loadiing</p>;
         
         return ( 
-            <div>
+            <div className="row">
+            <div className ="col-sm-6">
                 {this.greetText()}
                 <p>{this.props.text}</p>
                 <Login />
+            </div>
+            <div className ="col-sm-6">
+                <p> Game results</p>
+            </div>
             </div>
         );
     }

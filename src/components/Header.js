@@ -8,13 +8,12 @@ export default class Header extends Component{
         return (
 
             <div>
-                <h1>Data Analysis Model</h1>
+                <h1>Fiz buzz Generator</h1>
                     <nav>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/movie">Movies</Link></li>
-                        <li><Link to="/analysis">Statistic</Link></li>
-                        <li><Link to="/about">About</Link></li>
+
+                        <li><Link to="/about">Game Rules</Link></li>
                     </ul> 
                     </nav>
 

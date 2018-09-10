@@ -12,15 +12,13 @@ from 'react-bootstrap';
 
 export default class Login extends  Component{
 
-    // constructor(props, context) {
-    //     super(props, context);
-    
-    //     this.handleChange = this.handleChange.bind(this);
-    
-    //     this.state = {
-    //       value: ''
-    //     };
-    //   }
+    constructor(props, context) {
+        super(props, context);
+        this.handleChange = this.handleChange.bind(this);
+        this.state = {
+          value: ''
+        };
+      }
     
     //   getValidationState() {
     //     const length = this.state.value.length;
@@ -30,9 +28,10 @@ export default class Login extends  Component{
     //     return null;
     //   }
     
-    //   handleChange(e) {
-    //     this.setState({ value: e.target.value });
-    //   }
+      handleChange(e) {
+        this.setState({ value: e.target.value });
+        console.log ('game stat',this.state.value);
+      }
     
     render(){
         return(
@@ -45,20 +44,20 @@ export default class Login extends  Component{
                         <ControlLabel>Enter number / numbers to play the game</ControlLabel>
                         <FormControl
                             type="text"
-                            // value={this.state.value}
-                            placeholder="Enter text"
+                            value={this.state.value}
+                            placeholder="Enter number to pla"
                             // onChange={this.handleChange}
                         />
-                        <FormControl.Feedback />
+                        
                        {/* // <HelpBlock>Validation is based on string length.</HelpBlock> */}
                         </FormGroup>
-                        <button onClick={this.handleClick}>Play game</button>
+                        <button onClick={this.handleChange}>Play game</button>
                     </form>
                 </div>
         );
     }
     // actionMovieList(){
-        handleClick(e){
+        handleState(e){
             e.preventDefault();
             console.log('buttonClicked and state:', this.store);
         }
