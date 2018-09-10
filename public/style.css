@@ -1,3 +1,23 @@
+/*01 Buttons */
+/*01.01 inline form buttons*/
+.button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 
+                    0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
 /* The navigation bar */
 .navbar {
     overflow: hidden;
@@ -26,4 +46,63 @@
 /* Main content */
 .main {
     margin-top: 500px; /* Add a top margin to avoid content overlay */
+    width: 80%;
+}
+/*Table and table content in list*/
+table {
+    width:100%;
+    font-size: 1em;
+
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 1px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+} 
+/*Menue listing */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+
+.footer {
+    color: #ddd;
+    overflow: hidden;
+    background-color: #333;
+    position: absolute; /* Set the navbar to fixed position */
+    /*top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    bottom: 3em;
 }

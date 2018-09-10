@@ -1,34 +1,46 @@
 import React,{Component } from 'react';
-const dataset = require('../../data/movies.json');
+import { Table } from 'react-bootstrap';
+
+
+
+// const dataset = require('../../data/movies.json');
 
 export default class MovieList extends Component{
-
-    constructor( props ){
-        super(props);
-        this.myAlert  = this.myAlert.bind(this);
-    }
-
-    componentDidMount(){
-
-    }
-
+ 
     render(){
+        const ourVal = "This is link to movie database";
+const database = this.dataset;
         return(
             <div>
-                <p>Dam didi dum</p>
-                    <p>{this.myAlert}</p> 
+                <h2>Table of Movies </h2>
+              <Table stripped bordered condensed hover >
+                <thead>
+                <th>Title</th><th>Year</th><th>Director</th>
+                </thead>
+                <tbody>
+                    {this.printMovieList(dataset)}
+                </tbody>
+              </Table>
             </div>
         );
     }
-    
-    myAlert(){
-        return 
-        <div> 
-            dataset.forEach(element => {
-                <li>element</li>
-            })
-        </div>;
+ 
+    printMovieList ( data ){        
+        // this could be anotehr component data passed to by properties 
+        // user here redux as we are moving towards update, and patch
+      const movieTable = data.map((e,i,arr) => {
+            
+      return (
+              <tr>
+                 <td>{e.title} </td>
+                  <td>{e.year} </td>
+                 <td>{e.director} </td>
+              </tr>
+         
+              );
+            });
+      return movieTable;
     }
 }
-(MovieList);
+
 
