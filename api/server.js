@@ -1,25 +1,50 @@
 import express from 'express';
+import bodyParser from  'body-parser';
+var cors = require('cors');
 import  fizbuzzLogic,{ multiply }  from './modules/Logic';
+import { RSA_NO_PADDING } from 'constants';
 
 const env = {
-    HOST : '192.168.68.101',
+    HOST : 'localhost',
     PORT :3030,
 
 }
 
 var app =express();
+// cors
+app.use ( cors({origin:"*"}));
+app.use(bodyParser.json({limit:'50mb'}));
+app.use(bodyParser.urlencoded({
+   extended: true,
+   limit:'50mb'
 
-// server on port 
-app.listen(env.PORT, ()=>{
+}));
+// Runserver on the host
+if (env.PORT) {
+  app.listen(env.PORT, (err) => {
+    if (err) {
+      console.error(err);
+    }
+    console.info('=====================\n==> 🌎  API is running on port %s', env.PORT);
+    console.info('==> 💻  Send requests to http://%s:%s', env.HOST, env.PORT);
+  });
+} else {
+  console.error('==>     ERROR: No PORT environment variable has been specified');
+}
 
-    console.log (`Server Started on port :${env.PORT}`);
-});
-
+// routes @@
 app.post( '/game', function (req, res, next ){
-const numbers = [122,45,1,2,5,8,7,114,45,30];
-    //const numbers = req.body.numbers;
-    console.log ('>>>',req.body);
-    return res.json (fizbuzzLogic(numbers));
+//const numbers = [122,45,1,2,5,8,7,114,45,30];
+    const numbers = req.body.gameData;
+    console.log ('req shit',numbers);
+
+    fizbuzzLogic(numbers).then ((result)=>{
+        if (result){
+            return res.json(result);
+        }else{
+            return res.status(404).end();
+        } 
+    });  
 });
 
 // rest

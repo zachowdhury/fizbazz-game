@@ -3,11 +3,20 @@
 
 // @@ logical statements 
 
-export default function fizbuzzLogic(numbers){
+export default async function fizbuzzLogic(numbers){
   //var numbers=[];
   //var comment = "";
  //var numbers= [5,6,9,87,5];
- var results =   numbers.map( (e)=>{
+ if (numbers =='null'){
+   return ['No numbers provided'];
+ }
+ if (numbers ==='string'){
+   console.log (true);
+ }
+
+ var arrNumbers= numbers.split(",").map(Number);
+
+ var results =   arrNumbers.map( (e)=>{
      
     if ( e%15 == 0 ){
       console.log ('fiz-buzz'+'>> '+e);
@@ -24,7 +33,7 @@ export default function fizbuzzLogic(numbers){
       return e+'<<';
     }
    });
-             
+ console.log ('result printed >>>',results);            
  return results;
 }
 // @@
