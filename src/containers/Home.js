@@ -51,7 +51,7 @@ export default class Home extends Component {
             
             <div className ="col-sm-6">
                 <p> Game results</p>
-                {/* {this.state.gameResult} */}
+                {this.state.gameResult}
             </div>
             </div>
         );
@@ -80,13 +80,8 @@ export default class Home extends Component {
         const URL = 'http://localhost:3030/game';
         
         axios.post (URL, payload)
-        .then( function (response) {
-            console.log ('====>',response.data);
-            this.setState (  {gameResult: response.data });
-
-        }).then( function(response){
-                console.log( 'game server response-->',response.data);
-            }).catch(function(e){
+        .then((res) => this.setState ( {gameResult: res.data }))
+        .catch(function(e){
                 console.log  ('Err on fetching data',e);
             });
     }
