@@ -7,8 +7,16 @@ export default class List extends Component {
     static propTypes  ={
 
     }
-    
+    render(){
 
+        return (
+           <div>
+               
+           </div>
+            );
+    }
+
+        
 
 
 

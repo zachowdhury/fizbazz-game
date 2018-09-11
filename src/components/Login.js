@@ -14,10 +14,9 @@ export default class Login extends  Component{
 
     constructor(props, context) {
         super(props, context);
-        this.handleChange = this.handleChange.bind(this);
-        this.state = {
-          value: ''
-        };
+        this.handleClick = this.handleClick.bind(this);
+        this.printGameResult  =this.printGameResult.bind(this);
+        this.state = { value: "" };
       }
     
     //   getValidationState() {
@@ -28,11 +27,6 @@ export default class Login extends  Component{
     //     return null;
     //   }
     
-      handleChange(e) {
-        this.setState({ value: e.target.value });
-        console.log ('game stat',this.state.value);
-      }
-    
     render(){
         return(
             <div>
@@ -41,27 +35,48 @@ export default class Login extends  Component{
                         controlId="loginEmail"
                         //validationState={this.getValidationState()}
                         >
-                        <ControlLabel>Enter number / numbers to play the game</ControlLabel>
-                        <FormControl
+                        <ControlLabel><b>Enter number / numbers to play the game</b></ControlLabel>
+                        {/* <FormControl
                             type="text"
                             value={this.state.value}
                             placeholder="Enter number to pla"
                             // onChange={this.handleChange}
-                        />
+                            /> */}
                         
                        {/* // <HelpBlock>Validation is based on string length.</HelpBlock> */}
                         </FormGroup>
-                        <button onClick={this.handleChange}>Play game</button>
+                        
+                        <input type="text" ref="gameParams" />
+
+                        <input
+                        type="button"
+                        value="Play Game"
+                        
+                        onClick={this.handleClick}>
+                        </input>
                     </form>
                 </div>
         );
     }
-    // actionMovieList(){
-        handleState(e){
-            e.preventDefault();
-            console.log('buttonClicked and state:', this.store);
+    
+    
+      handleClick() {
+            
+        if (this.refs.gameParams !==null){
+        
+            var input = this.refs.gameParams;
+            var inputVal = input.value;
+            this.setState ( {value: inputVal});
+            console.log ('game stat',this.state.value);
         }
+        //this.setState({ value: e.target.value });
+      }
 
-    // }
+      printGameResult(result) {
+          return (
+              <div>this is : {result}</div>
+          );
 
+      }
+    
 }
