@@ -13,6 +13,7 @@ export default class Home extends Component {
        
         this.login= false;
         this.state = { 
+            isEmpty:false,
             hasErrored :false,
             isLoading: false,
             gameData: '',
@@ -42,7 +43,9 @@ export default class Home extends Component {
                 <div className="col-4">
                 <p><b>Game pane</b>  </p> 
                     <form onSubmit={this.handleSubmit}>
-                        <label>First enter number or numbers sepereted by comma inside input box
+                        <label>First enter number or 
+                            numbers sepereted by comma inside 
+                            input box
                             <input type = "text" 
                                 value={this.state.gameData} 
                                 onChange= {this.handleChange} />
@@ -54,6 +57,7 @@ export default class Home extends Component {
                 
                 <div className ="col-4">
                     <p> <b>Game results :</b></p>
+                    {this.inputError()}
                     <List 
                         results={this.state.gameResult} />
                 </div>
@@ -75,6 +79,13 @@ export default class Home extends Component {
     
     handleSubmit (e ){
         e.preventDefault();
+        // check number is entered
+        if ( this.state.gameData == '' 
+        || this.state.gameData == '0') {
+            this.setState({isEmpty:true})
+        }else{
+            this.setState({isEmpty:false})
+        }
         console.log( 'state val -- ',this.state.gameData);
          this.fetchGameResult( {gameData : this.state.gameData});
 
@@ -95,7 +106,14 @@ export default class Home extends Component {
     printAPIerror(msg){
         return <p>msg</p>;
     }
+    inputError(){
+        if (this.state.isEmpty){
+            return <p>no zero allowed or provide numbers </p>;
+        }else{
+            return null;
+        }
 
+    }
     greetText (){
         return(
             this.login 
