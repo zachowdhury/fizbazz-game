@@ -1,7 +1,6 @@
 import React,{Component } from 'react';
-import Login from '../components/Login';
-import { connect }from 'react-redux';
 import axios from 'axios';
+import List from '../components/List';
 
 export default class Home extends Component {
     constructor(props){
@@ -17,7 +16,8 @@ export default class Home extends Component {
             hasErrored :false,
             isLoading: false,
             gameData: '',
-            gameResult: []
+            gameResult: [],
+            apiError:[]
         };
     
     }
@@ -31,27 +31,32 @@ export default class Home extends Component {
         if (this.state.isLoading) return <p>....Loadiing</p>;
         
         return ( 
+            <div className="container">
+                <div className ="row">
+                    {this.greetText()}
+                    <p>{this.props.text}</p>
+                </div>
+                {/* Game pane */}
             <div className="row">
-            <div className ="col-sm-6">
-                {this.greetText()}
-                <p>{this.props.text}</p>
-            </div>
 
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Geme pane
-                        <input type = "text" 
-                            value={this.state.gameData} 
-                            onChange= {this.handleChange} />
-                    </label>
-                    <input type ="submit" 
-                    value="Click to play game"></input>
-                </form>
-            </div>
-            
-            <div className ="col-sm-6">
-                <p> Game results</p>
-                {this.state.gameResult}
+                <div className="col-4">
+                <p><b>Game pane</b>  </p> 
+                    <form onSubmit={this.handleSubmit}>
+                        <label>First enter number or numbers sepereted by comma inside input box
+                            <input type = "text" 
+                                value={this.state.gameData} 
+                                onChange= {this.handleChange} />
+                        </label>
+                        <input type ="submit" 
+                        value="Click to play game"></input>
+                    </form>
+                </div>
+                
+                <div className ="col-4">
+                    <p> <b>Game results :</b></p>
+                    <List 
+                        results={this.state.gameResult} />
+                </div>
             </div>
             </div>
         );
@@ -81,23 +86,15 @@ export default class Home extends Component {
         
         axios.post (URL, payload)
         .then((res) => this.setState ( {gameResult: res.data }))
-        .catch(function(e){
+        .catch(function(e){// this sshould be arrow to resolve
                 console.log  ('Err on fetching data',e);
+                this.printAPIerror('Error api'+e).bind(this);
             });
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    printAPIerror(msg){
+        return <p>msg</p>;
+    }
 
     greetText (){
         return(
@@ -107,17 +104,3 @@ export default class Home extends Component {
             );
         }           
 } 
-
-function mapStateToProps(state) {
-return {
-    users:state.users.data
-};
-}
-
-function mapActionToDispatch(dispatch){
-    return{
-
-    };
-}
-connect(mapStateToProps, 
-    null)(Home);

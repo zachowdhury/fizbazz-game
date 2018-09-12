@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from  'body-parser';
 var cors = require('cors');
 import  fizbuzzLogic,{ multiply }  from './modules/Logic';
-import { RSA_NO_PADDING } from 'constants';
 
 const env = {
     HOST : 'localhost',
@@ -36,7 +35,6 @@ if (env.PORT) {
 app.post( '/game', function (req, res, next ){
 //const numbers = [122,45,1,2,5,8,7,114,45,30];
     const numbers = req.body.gameData;
-    console.log ('req shit',numbers);
 
     fizbuzzLogic(numbers).then ((result)=>{
         if (result){
