@@ -20,14 +20,14 @@ export default async function fizbuzzLogic(numbers){
      
     if ( e%15 == 0 ){
       //console.log ('fiz-buzz'+'>> '+e);
-      return   e+" <fiz-buzz>";
+      return   e+" <buzz-fizz>";
 
     }else if( e%5 == 0 ){
-      //console.log ('buzz'+'>> '+e);
-      return e+" <buzz>";
+      //console.log ('fizz'+'>> '+e);
+      return e+" <fizz>";
     }else if ( e%3==0 ){
-      // console.log ('fiz'+'>> '+e);
-      return e+' <fiz>';
+      // console.log ('buzz'+'>> '+e);
+      return e+' <buzz>';
     }else{
       // console.log (e);
       return e;

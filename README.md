@@ -1,15 +1,16 @@
 # Buzz Fizz simple demo
 This is simple demo of a popular game buzz fizz.
-### How it works
-In this game the word Fizz replaces all the numbers with a five in them or that are multiples of five. As in Fizz if the number contains both a multiple of five and a five it is replaced with Fizz-Fizz!.
+### Game rules
+In this game the word Fizz replaces all the numbers with a five in them or that are multiples of five.
 
-As in Buzz! all numbers that have a seven or are a multiple of seven are replaced with Buzz!. Numbers that are a multiple of seven and contain a seven are replaced with Buzz-Buzz!.
+As in Buzz! all numbers that have a three or are a multiple of three are replaced with Buzz!. 
 
 Numbers that are a multiple of both or that contain both numbers would be replaced with Buzz-Fizz!.
 
 ### Installation
 
 This game requires nodeJS v6.14.2 Apology not using the lates LTS of nodeJS
+
 Install the dependencies and devDependencies and start the server.
 
 ```sh
