@@ -10,6 +10,7 @@ import {createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers'
 import logger from 'redux-logger'
+import '../public/style.css';
 
 const store = createStore( rootReducer, applyMiddleware(logger));
 // this  function Index = App module 
